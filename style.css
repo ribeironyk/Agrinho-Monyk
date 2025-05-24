@@ -1,0 +1,445 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --primary-green: 134 58% 40%; /* #4A7C59 */
+    --secondary-green: 134 58% 35%; /* #3E6B4C */
+    --light-green: 134 40% 85%; /* #C8D6CC */
+    --positive-color: 142 76% 36%; /* #16A085 */
+    --negative-color: 0 74% 42%; /* #C0392B */
+    --background: 210 11% 98%; /* #F5F7FA */
+    --surface: 0 0% 100%; /* #FFFFFF */
+    --text-primary: 213 27% 11%; /* #1C2833 */
+    --text-secondary: 213 15% 25%; /* #34495E */
+    --text-muted: 213 8% 45%; /* #6C7B7F */
+    --border-light: 210 14% 89%; /* #E5E8EB */
+    --shadow: 210 10% 23%; /* #3A4A5C */
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --border-radius: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --transition: all 0.3s ease;
+}
+
+/* Base Typography and Layout */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: hsl(var(--text-primary));
+    background-color: hsl(var(--background));
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, hsl(var(--primary-green)), hsl(var(--secondary-green)));
+    color: white;
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+}
+
+.header-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.main {
+    padding: var(--spacing-3xl) 0;
+}
+
+/* Introduction Section */
+.intro-section {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Technology Highlights */
+.tech-highlights {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: hsl(var(--surface));
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 10px rgba(hsl(var(--shadow)), 0.05);
+}
+
+.highlights-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: hsl(var(--text-primary));
+    margin-bottom: var(--spacing-lg);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.tech-item {
+    background: linear-gradient(135deg, hsl(var(--light-green)), hsl(var(--light-green) / 0.8));
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    color: hsl(var(--text-primary));
+    border: 1px solid hsl(var(--border-light));
+    transition: var(--transition);
+}
+
+.tech-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(hsl(var(--primary-green)), 0.2);
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    color: hsl(var(--text-primary));
+    margin-bottom: var(--spacing-lg);
+}
+
+.intro-text {
+    font-size: var(--font-size-lg);
+    color: hsl(var(--text-secondary));
+    line-height: 1.7;
+}
+
+/* Impacts Grid */
+.impacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+}
+
+/* Impact Sections */
+.positive-impacts,
+.negative-impacts {
+    background: hsl(var(--surface));
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(hsl(var(--shadow)), 0.1);
+    transition: var(--transition);
+}
+
+.positive-impacts:hover,
+.negative-impacts:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(hsl(var(--shadow)), 0.15);
+}
+
+/* Impact Headers */
+.impact-header {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.impact-header.positive {
+    background: linear-gradient(135deg, hsl(var(--positive-color)), hsl(var(--positive-color) / 0.8));
+    color: white;
+}
+
+.impact-header.negative {
+    background: linear-gradient(135deg, hsl(var(--negative-color)), hsl(var(--negative-color) / 0.8));
+    color: white;
+}
+
+.impact-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.positive-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.negative-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Impact Content */
+.impact-content {
+    padding: var(--spacing-xl);
+}
+
+.impact-item {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid hsl(var(--border-light));
+}
+
+.impact-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.impact-item-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: hsl(var(--text-primary));
+    margin-bottom: var(--spacing-sm);
+}
+
+.impact-item-description {
+    color: hsl(var(--text-secondary));
+    line-height: 1.7;
+}
+
+/* Solutions Section */
+.solutions-section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.solution-item {
+    background: hsl(var(--surface));
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 20px rgba(hsl(var(--shadow)), 0.1);
+    border-left: 4px solid hsl(var(--primary-green));
+    transition: var(--transition);
+}
+
+.solution-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(hsl(var(--shadow)), 0.15);
+}
+
+.solution-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: hsl(var(--primary-green));
+    margin-bottom: var(--spacing-sm);
+}
+
+.solution-description {
+    color: hsl(var(--text-secondary));
+    line-height: 1.7;
+}
+
+/* Conclusion Section */
+.conclusion-section {
+    background: hsl(var(--surface));
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(hsl(var(--shadow)), 0.1);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.conclusion-text {
+    font-size: var(--font-size-lg);
+    color: hsl(var(--text-secondary));
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+    background: hsl(var(--text-primary));
+    color: white;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.footer-text {
+    opacity: 0.8;
+    font-size: var(--font-size-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .header {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .header-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .header-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .impacts-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .intro-text,
+    .conclusion-text {
+        font-size: var(--font-size-base);
+    }
+    
+    .impact-header,
+    .impact-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .conclusion-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .solution-item {
+        padding: var(--spacing-lg);
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    
+    .impact-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .icon {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .header-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .header-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .impact-header,
+    .impact-content {
+        padding: var(--spacing-md);
+    }
+    
+    .conclusion-section {
+        padding: var(--spacing-md);
+    }
+    
+    .impact-title {
+        font-size: var(--font-size-lg);
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header {
+        background: none !important;
+        color: hsl(var(--text-primary)) !important;
+    }
+    
+    .positive-impacts:hover,
+    .negative-impacts:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .impact-header.positive,
+    .impact-header.negative {
+        background: none !important;
+        color: hsl(var(--text-primary)) !important;
+        border: 2px solid hsl(var(--border-light));
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Focus Styles for Better Accessibility */
+*:focus {
+    outline: 2px solid hsl(var(--primary-green));
+    outline-offset: 2px;
+}
